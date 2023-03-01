@@ -48,7 +48,7 @@ public class Security{
                         authz
                                 //from the most restrictive stuff to the least
                                 .requestMatchers("/admin").hasRole("admin")
-                                .requestMatchers("/user").hasRole("user")
+                                .requestMatchers("/user").hasAnyRole("user","admin")
                                 .requestMatchers("/").permitAll()
                                 .and()
                                 .formLogin();
